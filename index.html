@@ -15,7 +15,13 @@
 
     <div id="app">
         <div class="container my-5 ">
-            
+            <h1>Lista Mail</h1>
+            <ul>
+                <!-- Stampo in Html le 10 mail in una lista -->
+                <li v-for="mail in mailArray">
+                    {{mail}}
+                </li>
+            </ul>
         </div>
 
     </div>

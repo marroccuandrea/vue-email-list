@@ -17,28 +17,20 @@ createApp({
 
         axios.get(this.apiUrl)
         .then((risposta) => {
-          console.log('DATI ARRIVATI');
           console.log(risposta.data);
-          // data è il contenuto della risposta che DOBBIAMO SEMPRE studiare perché non sappiamo prima come è fatto
+  
           console.log('----->>> ',risposta.data.response);
   
-          // this.title diventa 'OK' se risposta.data.response === true
-          this.title = risposta.data.response ? 'OK' : 'NOOOO!!!'
+          // Pusho dentro all'array che ho creato le 10 mail generate
+          this.mailArray.push(risposta.data.response)
         })
-        .catch(errore => {
-          console.log('MESSAGGIO DI ERRORE');
-          console.log(errore.message);
-  
-        })
+       
       }
+      console.log(this.mailArray);
     }
 
   },
   mounted(){
-
     this.getApi();
-    console.log('QUI SONO PRIMA DELL\'ARRIVO DEI DATI');
-
-
   }
 }).mount('#app')
